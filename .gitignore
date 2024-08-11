@@ -1,0 +1,28 @@
+# Node modules folder
+node_modules/
+
+# Logs
+logs/
+*.log
+npm-debug.log*
+
+# Dependency directories
+jspm_packages/
+
+# Environment variable files
+.env
+
+# Build directory
+dist/
+build/
+
+# Cache directories
+.cache/
+.tmp/
+
+# Coverage directory used by testing tools
+coverage/
+
+# OS generated files
+.DS_Store
+Thumbs.db
