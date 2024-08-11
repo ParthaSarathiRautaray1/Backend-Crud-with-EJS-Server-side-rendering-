@@ -46,4 +46,20 @@ app.get('/delete/:id',async (req,res) => {
 })
 
 
-app.listen(3000)
+app.get('/edit/:userid',async (req,res) => {
+    let user = await userModel.findOne({id: req.params.id})
+    res.render("edit",{user})
+})
+
+
+app.post('/update/:id',async (req,res) => {
+    let {image , name, email} = req.body
+    let user = await userModel.findOneAndUpdate({id: req.params.user},{image, name, email} , {new:true})
+    res.redirect("/read")
+})
+
+
+const PORT = process.env.PORT || 3000;
+app.listen(PORT, () => {
+  console.log(`Server running on port ${PORT}`);
+});
